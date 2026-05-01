@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>JOJO Electronics</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* Barra principal estilo madera */
+header {
+    background: linear-gradient(45deg, #8b5a2b, #a0522d);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1.5s;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Contenedor */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Tarjetas */
+.card {
+    background: white;
+    width: 220px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideUp 1s forwards;
+}
+
+.card:nth-child(2) { animation-delay: 0.3s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Botón */
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #555;
+}
+
+/* Descripción */
+.descripcion {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+</style>
+
+<script>
+function mostrar(id) {
+    let texto = document.getElementById(id);
+    if (texto.style.display === "none") {
+        texto.style.display = "block";
+    } else {
+        texto.style.display = "none";
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<img src="imagenes/logo.png" width="450">
+    <h1>JOJO Electronics 🎸</h1>
+    <p>Tu tienda de instrumentos musicales</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <img src="imagenes/guitarra.jpeg" alt="Guitarra">
+        <h3>Guitarra Eléctrica</h3>
+        <button onclick="mostrar('g1')">Visualizar</button>
+        <p id="g1" class="descripcion">Guitarra ideal para rock y metal, sonido potente y diseño moderno.</p>
+    </div>
+
+    <div class="card">
+        <img src="imagenes/piano.jpeg" alt="Piano">
+        <h3>Piano</h3>
+        <button onclick="mostrar('g2')">Visualizar</button>
+        <p id="g2" class="descripcion">Piano clásico con excelente calidad de sonido, perfecto para principiantes y expertos.</p>
+    </div>
+
+    <div class="card">
+        <img src="imagenes/bateria.jpg" alt="Batería">
+        <h3>Batería</h3>
+        <button onclick="mostrar('g3')">Visualizar</button>
+        <p id="g3" class="descripcion">Batería completa con gran resonancia, ideal para ensayos y presentaciones.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
